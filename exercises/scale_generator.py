@@ -25,7 +25,7 @@ def get_chromatic_sequence(starting_note):
         "G#",
     ]
 
-    if "b" in starting_note:
+    if starting_note.endswith('b')  or starting_note == "F":
         chromatic_sequence = [
             "A",
             "Bb",

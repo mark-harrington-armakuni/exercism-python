@@ -34,6 +34,21 @@ def test_return_sequence_starting_from_f_sharp():
         "F",
     ]
 
+def test_return_sequence_starting_from_d():
+    assert get_chromatic_sequence("D") == [
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B",
+        "C",
+        "C#"
+    ]
 
 def test_return_sequence_starting_from_b_flat():
     assert get_chromatic_sequence("Bb") == [
@@ -51,6 +66,21 @@ def test_return_sequence_starting_from_b_flat():
         "A",
     ]
 
+def test_return_sequence_starting_from_f():
+    assert get_chromatic_sequence("F") == [
+        "F",
+        "Gb",
+        "G",
+        "Ab",
+        "A",
+        "Bb",
+        "B",
+        "C",
+        "Db",
+        "D",
+        "Eb",
+        "E",
+    ]
 
 def test_return_diatonic_sequence_starting_from_c():
     assert get_diatonic_sequence("C", "MMmMMMm") == [
