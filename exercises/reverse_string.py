@@ -1,5 +1,5 @@
 def reverse(s):
-    r = ''
+    r = ""
     i = len(s)
     while i > 0:
         r = r + s[i - 1]

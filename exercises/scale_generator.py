@@ -10,14 +10,43 @@
 
 def get_chromatic_sequence(starting_note):
 
-    chromatic_sequence = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+    chromatic_sequence = [
+        "A",
+        "A#",
+        "B",
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+    ]
 
-    if 'b' in starting_note:
-        chromatic_sequence = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
+    if "b" in starting_note:
+        chromatic_sequence = [
+            "A",
+            "Bb",
+            "B",
+            "C",
+            "Db",
+            "D",
+            "Eb",
+            "E",
+            "F",
+            "Gb",
+            "G",
+            "Ab",
+        ]
 
     starting_note_index = chromatic_sequence.index(starting_note)
 
-    complete_sequence = chromatic_sequence[starting_note_index:] + chromatic_sequence[:starting_note_index]
+    complete_sequence = (
+        chromatic_sequence[starting_note_index:]
+        + chromatic_sequence[:starting_note_index]
+    )
 
     return complete_sequence
 
@@ -35,26 +64,27 @@ def get_chromatic_sequence(starting_note):
     # Return Diatonic Sequence
 """
 
+
 def get_diatonic_sequence(starting_note, intervals):
-    
+
     chromatic_sequence = get_chromatic_sequence(starting_note)
 
     chromatic_sequence_length = len(chromatic_sequence)
-    
+
     diatonic_sequence = [starting_note]
 
     current_index = 0
-    
+
     for i in intervals:
-        if i == 'm':
+        if i == "m":
             current_index += 1
 
-        elif i == 'M':
+        elif i == "M":
             current_index += 2
 
         if current_index >= chromatic_sequence_length:
             current_index = current_index - chromatic_sequence_length
-            
+
         diatonic_sequence.append(chromatic_sequence[current_index])
 
     return diatonic_sequence

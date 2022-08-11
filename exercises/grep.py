@@ -16,6 +16,8 @@ DATA_FOLDER_PATH = "/data/"
 
     # return output string of lines
 """
+
+
 def grep_from_files(regex_string, search_file_names):
     output_sentences = []
 
@@ -24,11 +26,11 @@ def grep_from_files(regex_string, search_file_names):
     reg_exp = re.compile(regex_string)
 
     is_mutiple_files = True if len(search_file_names) > 1 else False
-    
+
     try:
         for file_name in search_file_names:
             with open(WORKING_DIRECTORY + DATA_FOLDER_PATH + file_name) as file:
-                sentences =  file.readlines()
+                sentences = file.readlines()
 
             for sentence in sentences:
                 if reg_exp.search(sentence):
